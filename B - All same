@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    long long n, k;
+    cin >> n >> k;
+    long long arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    long long sum = -1;
+    long long c = 0;
+    for (long long i = 0, j = 0; i < n, j < n; j++)
+    {
+        if (arr[i] == arr[j])
+            c++;
+        else
+        {
+            i = j;
+            j--;
+            c = 0;
+            continue;
+        }
+        if (c == k)
+            if (c * arr[i] > sum)
+            {
+                sum = c * arr[i];
+                c = 0;
+                continue;
+            }
+    }
+    cout << sum << endl;
+    return 0;
+}
