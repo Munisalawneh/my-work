@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    short x, y;
+    long long m[5][5];
+    for (int i = 0; i < 5; i++)
+        for (int j = 0; j < 5; j++)
+        {
+            cin >> m[i][j];
+            if(m[i][j] != 0)
+            {   
+                x = i + 1;
+                y = j + 1;
+                break;
+            }
+        }
+    short ans = abs(y - 3) + abs (x - 3);
+    cout<<ans<<endl;
+    return 0;
+}
